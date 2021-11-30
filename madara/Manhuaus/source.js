@@ -1060,7 +1060,7 @@ const paperback_extensions_common_1 = require("paperback-extensions-common");
 const Madara_1 = require("../Madara");
 const MANHUAUS_DOMAIN = 'https://manhuaus.com';
 exports.ManhuausInfo = {
-    version: Madara_1.getExportVersion('0.0.1'),
+    version: Madara_1.getExportVersion('0.0.2'),
     name: 'Manhuaus',
     description: 'Extension that pulls manga from manhuaus.com',
     author: 'GameFuzzy',
@@ -1081,7 +1081,7 @@ class Manhuaus extends Madara_1.Madara {
         this.baseUrl = MANHUAUS_DOMAIN;
         this.languageCode = paperback_extensions_common_1.LanguageCode.ENGLISH;
         this.hasAdvancedSearchPage = true;
-        this.chapterDetailsSelector = 'li.blocks-gallery-item > figure > img';
+        this.chapterDetailsSelector = 'li.blocks-gallery-item > figure > img, div.page-break > img, div#chapter-video-frame > p > img, div.text-left > figure.wp-block-gallery > figure.wp-block-image > img';
         this.alternativeChapterAjaxEndpoint = true;
     }
 }
