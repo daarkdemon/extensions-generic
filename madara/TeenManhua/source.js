@@ -1062,19 +1062,19 @@ exports.Parser = Parser;
 },{"paperback-extensions-common":5}],51:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.XuNScans = exports.XuNScansInfo = void 0;
+exports.TeenManhua = exports.TeenManhuaInfo = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const Madara_1 = require("../Madara");
-const XUNSCANS_DOMAIN = 'https://xunscans.xyz';
-exports.XuNScansInfo = {
+const TEENMANHUA_DOMAIN = 'https://teenmanhua.com';
+exports.TeenManhuaInfo = {
     version: Madara_1.getExportVersion('0.0.0'),
-    name: 'XuNScans',
-    description: 'Extension that pulls manga from xunscans.xyz',
-    author: 'Nuno Costa',
-    authorWebsite: 'http://github.com/nuno99costa',
+    name: 'TeenManhua',
+    description: 'Extension that pulls manga from teenmanhua.com',
+    author: 'Netsky',
+    authorWebsite: 'http://github.com/TheNetsky',
     icon: 'icon.png',
-    contentRating: paperback_extensions_common_1.ContentRating.MATURE,
-    websiteBaseURL: XUNSCANS_DOMAIN,
+    contentRating: paperback_extensions_common_1.ContentRating.EVERYONE,
+    websiteBaseURL: TEENMANHUA_DOMAIN,
     sourceTags: [
         {
             text: 'Notifications',
@@ -1082,16 +1082,16 @@ exports.XuNScansInfo = {
         }
     ]
 };
-class XuNScans extends Madara_1.Madara {
+class TeenManhua extends Madara_1.Madara {
     constructor() {
         super(...arguments);
-        this.baseUrl = XUNSCANS_DOMAIN;
+        this.baseUrl = TEENMANHUA_DOMAIN;
         this.languageCode = paperback_extensions_common_1.LanguageCode.ENGLISH;
         this.hasAdvancedSearchPage = true;
-        this.userAgentRandomizer = '';
+        this.alternativeChapterAjaxEndpoint = true;
     }
 }
-exports.XuNScans = XuNScans;
+exports.TeenManhua = TeenManhua;
 
 },{"../Madara":48,"paperback-extensions-common":5}]},{},[51])(51)
 });

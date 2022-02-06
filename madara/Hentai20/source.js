@@ -436,7 +436,7 @@ exports.Madara = exports.getExportVersion = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const MadaraParser_1 = require("./MadaraParser");
 const MadaraHelper_1 = require("./MadaraHelper");
-const BASE_VERSION = '2.0.6';
+const BASE_VERSION = '2.0.7';
 const getExportVersion = (EXTENSION_VERSION) => {
     return BASE_VERSION.split('.').map((x, index) => Number(x) + Number(EXTENSION_VERSION.split('.')[index])).join('.');
 };
@@ -494,6 +494,9 @@ class Madara extends paperback_extensions_common_1.Source {
         */
         this.userAgentRandomizer = `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/78.0${Math.floor(Math.random() * 100000)}`;
         this.parser = new MadaraParser_1.Parser();
+    }
+    getMangaShareUrl(mangaId) {
+        return `${this.baseUrl}/${this.sourceTraversalPathName}/${mangaId}/`;
     }
     getMangaDetails(mangaId) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -1061,7 +1064,7 @@ class Parser {
             else
                 break;
             if (typeof id === 'undefined') {
-                throw new Error(`Failed to parse homepage sections for ${source.baseUrl}/${source.homePage}/`);
+                throw new Error(`Failed to parse homepage sections for ${source.baseUrl}/`);
             }
             passedReferenceTimePrior = passedReferenceTimeCurrent;
         }
