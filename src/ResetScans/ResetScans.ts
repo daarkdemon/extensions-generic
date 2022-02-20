@@ -33,4 +33,5 @@ export class ResetScans extends Madara {
     baseUrl: string = RESETSCANS_DOMAIN
     languageCode: LanguageCode = LanguageCode.ENGLISH
     override alternativeChapterAjaxEndpoint = true
+    override hasAdvancedSearchPage = true
 }
