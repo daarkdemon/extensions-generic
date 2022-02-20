@@ -1088,6 +1088,7 @@ class ResetScans extends Madara_1.Madara {
         this.baseUrl = RESETSCANS_DOMAIN;
         this.languageCode = paperback_extensions_common_1.LanguageCode.ENGLISH;
         this.alternativeChapterAjaxEndpoint = true;
+        this.hasAdvancedSearchPage = true;
     }
 }
 exports.ResetScans = ResetScans;
